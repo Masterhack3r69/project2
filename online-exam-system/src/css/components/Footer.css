@@ -1,0 +1,30 @@
+.footer {
+  background-color: #4335A7;
+  color: #FFF6E9;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+}
+
+.footer-section {
+  margin: 0 1rem;
+}
+
+.footer-section h4 {
+  color: #80C4E9;
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #80C4E9;
+} 
