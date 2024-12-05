@@ -18,12 +18,13 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await axios.post('/api/auth/login', formData);
-      const { token, role } = response.data;
+      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const { token, role, username } = response.data;
       
-      // Store token and role in localStorage
+      // Store token, role and username in localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('userRole', role);
+      localStorage.setItem('username', username);
 
       // Redirect based on role
       switch(role) {
