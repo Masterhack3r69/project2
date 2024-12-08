@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/pages/Auth.css';
+import { useAuth } from '../context/AuthContext';
 
 function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -21,10 +23,8 @@ function Login() {
       const response = await axios.post('http://localhost:5000/api/auth/login', formData);
       const { token, role, username } = response.data;
       
-      // Store token, role and username in localStorage
-      localStorage.setItem('token', token);
-      localStorage.setItem('userRole', role);
-      localStorage.setItem('username', username);
+      // Use the login function from AuthContext
+      login({ token, role, username });
 
       // Redirect based on role
       switch(role) {
