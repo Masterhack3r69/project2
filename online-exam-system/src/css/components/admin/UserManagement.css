@@ -208,7 +208,7 @@
 }
 
 .users-table td {
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid #e0e0e0;
   color: #444;
 }
@@ -247,28 +247,123 @@
 
 .action-buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
 .action-buttons button {
-  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   border: none;
-  padding: 0.4rem;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.edit-button {
-  color: #4335A7;
-}
-
-.delete-button {
-  color: #dc3545;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 .action-buttons button:hover {
-  background-color: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* Tooltips for buttons */
+.action-buttons button::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  margin-bottom: 5px;
+}
+
+.action-buttons button:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.view-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.view-button:hover {
+  color: #388E3C;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(76, 175, 79, 0.2);
+}
+
+.edit-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.edit-button:hover {
+  color: #1976D2;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+.delete-button {
+  background-color: #FF4444;
+  color: white;
+}
+
+.delete-button:hover {
+  color: #CC0000;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(255, 68, 68, 0.2);
+}
+
+/* Add hover effect for the entire table row */
+.users-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.users-table tbody tr:hover {
+  background-color: #f8f9ff;
+}
+
+/* Update the table cell padding for better spacing */
+.users-table td {
+  padding: 0.75rem 1rem;
+}
+
+/* Add subtle animation for button icons */
+.action-buttons button svg {
+  transition: transform 0.2s ease;
+}
+
+.action-buttons button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Add focus styles for accessibility */
+.action-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px currentColor;
+}
+
+/* Add disabled state styles */
+.action-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.action-buttons button:disabled:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 /* Responsive adjustments */
@@ -289,4 +384,90 @@
   .filter-group {
     flex: 1;
   }
+}
+
+/* Add these new styles */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.user-detail {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.user-detail label {
+  font-weight: 600;
+  width: 100px;
+  color: #666;
+}
+
+.user-detail span {
+  color: #333;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.close-modal-button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-modal-button:hover {
+  background-color: #e0e0e0;
 }

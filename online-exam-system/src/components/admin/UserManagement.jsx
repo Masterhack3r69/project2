@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MdAdd, MdEdit, MdDelete, MdSearch, MdFilterList } from 'react-icons/md';
+import { MdAdd, MdEdit, MdDelete, MdSearch, MdFilterList, MdVisibility } from 'react-icons/md';
 import '../../css/components/admin/UserManagement.css';
 
 const UserManagement = () => {
@@ -9,6 +9,8 @@ const UserManagement = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRole, setSelectedRole] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState('All');
+  const [showUserModal, setShowUserModal] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
     fetchUsers();
@@ -70,17 +72,70 @@ const UserManagement = () => {
           }
         });
 
+        const data = await response.json();
+        
         if (!response.ok) {
-          const data = await response.json();
           throw new Error(data.message || 'Failed to delete user');
         }
 
         setUsers(users.filter(user => user.id !== id));
+        alert('User deleted successfully');
       } catch (err) {
         console.error('Error in handleDeleteUser:', err);
-        setError('Error deleting user: ' + err.message);
+        alert(err.message || 'Error deleting user. Please try again.');
       }
     }
+  };
+
+  const handleViewUser = (user) => {
+    setSelectedUser(user);
+    setShowUserModal(true);
+  };
+
+  const UserDetailsModal = ({ user, onClose }) => {
+    if (!user) return null;
+
+    return (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h3>User Details</h3>
+            <button className="close-button" onClick={onClose}>×</button>
+          </div>
+          <div className="modal-body">
+            <div className="user-detail">
+              <label>Name:</label>
+              <span>{user.name}</span>
+            </div>
+            <div className="user-detail">
+              <label>Email:</label>
+              <span>{user.email}</span>
+            </div>
+            <div className="user-detail">
+              <label>Role:</label>
+              <span className={`role-badge ${user.role.toLowerCase()}`}>
+                {user.role}
+              </span>
+            </div>
+            <div className="user-detail">
+              <label>Status:</label>
+              <span className={`status-badge ${user.status.toLowerCase()}`}>
+                {user.status}
+              </span>
+            </div>
+            <div className="user-detail">
+              <label>Last Login:</label>
+              <span>{user.lastLogin}</span>
+            </div>
+          </div>
+          <div className="modal-footer">
+            <button className="close-modal-button" onClick={onClose}>
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   if (loading) {
@@ -229,7 +284,16 @@ const UserManagement = () => {
                   <td>{user.lastLogin}</td>
                   <td>
                     <div className="action-buttons">
-                      <button className="edit-button" title="Edit user">
+                      <button 
+                        className="view-button" 
+                        title="View user details"
+                        onClick={() => handleViewUser(user)}
+                      >
+                        <MdVisibility size={18} />
+                      </button>
+                      <button 
+                        className="edit-button" 
+                        title="Edit user">
                         <MdEdit size={18} />
                       </button>
                       <button 
@@ -253,6 +317,16 @@ const UserManagement = () => {
           </tbody>
         </table>
       </div>
+
+      {showUserModal && (
+        <UserDetailsModal 
+          user={selectedUser} 
+          onClose={() => {
+            setShowUserModal(false);
+            setSelectedUser(null);
+          }}
+        />
+      )}
     </div>
   );
 };
