@@ -9,12 +9,7 @@
   margin-bottom: 2rem;
 }
 
-.user-management-header h2 {
-  color: #4335A7;
-  margin: 0;
-}
-
-.add-user-button {
+.user-add-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -27,7 +22,7 @@
   transition: background-color 0.2s;
 }
 
-.add-user-button:hover {
+.user-add-button:hover {
   background-color: #362c85;
 }
 
@@ -293,34 +288,34 @@
   visibility: visible;
 }
 
-.view-button {
+.users-view-button {
   background-color: #4CAF50;
   color: white;
 }
 
-.view-button:hover {
+.users-view-button:hover {
   color: #388E3C;
   background-color: white;
   box-shadow: 0 2px 4px rgba(76, 175, 79, 0.2);
 }
 
-.edit-button {
-  background-color: #2196F3;
+.users-edit-button {
+  background-color: #2196F3 ;
   color: white;
 }
 
-.edit-button:hover {
+.users-edit-button:hover {
   color: #1976D2;
   background-color: white;
   box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
 }
 
-.delete-button {
+.users-delete-button {
   background-color: #FF4444;
   color: white;
 }
 
-.delete-button:hover {
+.users-delete-button:hover {
   color: #CC0000;
   background-color: white;
   box-shadow: 0 2px 4px rgba(255, 68, 68, 0.2);

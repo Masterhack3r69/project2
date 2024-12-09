@@ -159,7 +159,7 @@ const UserManagement = () => {
     <div className="user-management">
       <div className="user-management-header">
         <h2>User Management</h2>
-        <button className="add-user-button">
+        <button className="user-add-button">
           <MdAdd size={20} /> Add User
         </button>
       </div>
@@ -285,19 +285,19 @@ const UserManagement = () => {
                   <td>
                     <div className="action-buttons">
                       <button 
-                        className="view-button" 
+                        className="users-view-button" 
                         title="View user details"
                         onClick={() => handleViewUser(user)}
                       >
                         <MdVisibility size={18} />
                       </button>
                       <button 
-                        className="edit-button" 
+                        className="users-edit-button" 
                         title="Edit user">
                         <MdEdit size={18} />
                       </button>
                       <button 
-                        className="delete-button" 
+                        className="users-delete-button" 
                         title="Delete user"
                         onClick={() => handleDeleteUser(user.id)}
                       >

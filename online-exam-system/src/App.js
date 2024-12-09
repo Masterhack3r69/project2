@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import QuizPage from './pages/QuizPage';
 import AdminDashboard from './components/admin/Dashboard';
 import TeacherDashboard from './components/teacher/Dashboard';
 import DashboardLayout from './components/shared/DashboardLayout';
@@ -24,7 +23,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/quizzes" element={<QuizPage />} />
             
             {/* Student Routes */}
             <Route path="/student/profile" element={

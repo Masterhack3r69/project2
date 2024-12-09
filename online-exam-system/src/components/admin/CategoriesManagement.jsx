@@ -42,11 +42,11 @@ const CategoriesManagement = () => {
   };
 
   return (
-    <div className="categories-management">
-      <div className="categories-header">
+    <div className="category-management">
+      <div className="category-management-header">
         <h2>Categories Management</h2>
         <button 
-          className="add-button"
+          className="category-add-button"
           onClick={() => setShowAddForm(true)}
         >
           <MdAdd size={20} /> Add Category
@@ -129,10 +129,10 @@ const CategoriesManagement = () => {
                   </div>
                 </div>
                 <div className="category-actions">
-                  <button className="edit-button" onClick={() => handleEdit(category)}>
+                  <button className="category-edit-button" onClick={() => handleEdit(category)}>
                     <MdEdit size={18} />
                   </button>
-                  <button className="delete-button" onClick={() => handleDelete(category.id)}>
+                  <button className="category-delete-button" onClick={() => handleDelete(category.id)}>
                     <MdDelete size={18} />
                   </button>
                 </div>

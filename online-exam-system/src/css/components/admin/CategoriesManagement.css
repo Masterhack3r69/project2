@@ -1,20 +1,15 @@
-.categories-management {
+.category-management {
   padding: 2rem;
 }
 
-.categories-header {
+.category-management-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
 }
 
-.categories-header h2 {
-  color: #4335A7;
-  margin: 0;
-}
-
-.add-button {
+.category-add-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -27,7 +22,7 @@
   transition: all 0.3s ease;
 }
 
-.add-button:hover {
+.category-add-button:hover {
   background-color: #372c8c;
   transform: translateY(-1px);
 }
@@ -139,12 +134,12 @@
   justify-content: center;
 }
 
-.edit-button:hover {
+.category-edit-button:hover {
   color: #4335A7;
   background: rgba(67, 53, 167, 0.1);
 }
 
-.delete-button:hover {
+.category-delete-button:hover {
   color: #dc3545;
   background: rgba(220, 53, 69, 0.1);
 }
