@@ -52,7 +52,7 @@ function Register() {
         <h2>Create Account</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="auth-form-group">
             <label>Username</label>
             <input
               type="text"
@@ -62,7 +62,7 @@ function Register() {
               placeholder="Choose a username"
             />
           </div>
-          <div className="form-group">
+          <div className="auth-form-group">
             <label>Email</label>
             <input
               type="email"
@@ -72,7 +72,7 @@ function Register() {
               placeholder="Enter your email"
             />
           </div>
-          <div className="form-group">
+          <div className="auth-form-group">
             <label>Role</label>
             <select
               value={formData.role}
@@ -83,7 +83,7 @@ function Register() {
               <option value="teacher">Teacher</option>
             </select>
           </div>
-          <div className="form-group">
+          <div className="auth-form-group">
             <label>Password</label>
             <input
               type="password"
@@ -94,7 +94,7 @@ function Register() {
               minLength="6"
             />
           </div>
-          <div className="form-group">
+          <div className="auth-form-group">
             <label>Confirm Password</label>
             <input
               type="password"

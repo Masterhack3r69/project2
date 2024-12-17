@@ -8,7 +8,8 @@
   background-color: #f8f9fa;
 }
 
-.admin-dashboard {
+.admin-dashboard,
+.teacher-dashboard {
   padding: 2rem;
   background-color: #f8f9fa;
   min-height: 100vh;
@@ -62,6 +63,7 @@
 .stat-icon.students { background-color: #e8f5e9; color: #2e7d32; }
 .stat-icon.active-exams { background-color: #fff3e0; color: #f57c00; }
 .stat-icon.completed { background-color: #e8eaf6; color: #3f51b5; }
+.stat-icon.performance { background-color: #fce4ec; color: #c2185b; }
 
 .stat-info {
   flex: 1;
@@ -98,7 +100,8 @@
 }
 
 @media (max-width: 768px) {
-  .admin-dashboard {
+  .admin-dashboard,
+  .teacher-dashboard {
     padding: 1rem;
   }
   

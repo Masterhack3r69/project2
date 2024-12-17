@@ -330,12 +330,10 @@
   background-color: #f8f9ff;
 }
 
-/* Update the table cell padding for better spacing */
 .users-table td {
   padding: 0.75rem 1rem;
 }
 
-/* Add subtle animation for button icons */
 .action-buttons button svg {
   transition: transform 0.2s ease;
 }
@@ -344,7 +342,6 @@
   transform: scale(1.1);
 }
 
-/* Add focus styles for accessibility */
 .action-buttons button:focus {
   outline: none;
   box-shadow: 0 0 0 2px white, 0 0 0 4px currentColor;

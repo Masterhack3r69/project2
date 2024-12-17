@@ -17,7 +17,7 @@ const Sidebar = ({ role }) => {
 
   const teacherLinks = [
     { path: '/teacher/dashboard', label: 'Dashboard', icon: MdDashboard },
-    { path: '/teacher/create-exam', label: 'Create Exam', icon: MdEdit },
+    { path: '/teacher/exams', label: 'Exams Management', icon: MdAssignment },
     { path: '/teacher/results', label: 'Student Results', icon: MdAssessment },
   ];
 

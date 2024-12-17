@@ -53,7 +53,7 @@ function Login() {
         <h2>Login to Exam System</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="auth-form-group">
             <label>Username</label>
             <input
               type="text"
@@ -63,7 +63,7 @@ function Login() {
               placeholder="Enter your username"
             />
           </div>
-          <div className="form-group">
+          <div className="auth-form-group">
             <label>Password</label>
             <input
               type="password"

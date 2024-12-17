@@ -1,0 +1,215 @@
+.teacher-exams-management {
+  padding: 24px;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 64px);
+}
+
+.teacher-exams-content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.teacher-exams-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.teacher-exams-header-title h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.teacher-exams-subtitle {
+  margin: 4px 0 0;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.teacher-exams-create-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+}
+
+.teacher-exams-create-btn:hover {
+  background-color: #43a047;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+}
+
+.teacher-exams-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.teacher-exams-search-wrapper,
+.teacher-exams-filter-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.teacher-exams-search-wrapper {
+  flex: 1;
+  max-width: 400px;
+}
+
+.teacher-exams-search-icon,
+.teacher-exams-filter-icon {
+  position: absolute;
+  left: 12px;
+  color: #6c757d;
+}
+
+.teacher-exams-search-input,
+.teacher-exams-filter-select {
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.teacher-exams-search-input {
+  width: 100%;
+}
+
+.teacher-exams-search-input:focus,
+.teacher-exams-filter-select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.teacher-exams-table-responsive {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.teacher-exams-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teacher-exams-list th,
+.teacher-exams-list td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.teacher-exams-list th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.teacher-exams-title {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.teacher-exams-status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.teacher-exams-status-badge.active {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.teacher-exams-status-badge.draft {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+.teacher-exams-status-badge.completed {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.teacher-exams-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.teacher-exams-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.teacher-exams-action-btn.edit {
+  color: #2196F3;
+}
+
+.teacher-exams-action-btn.delete {
+  color: #F44336;
+}
+
+.teacher-exams-action-btn:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .teacher-exams-management {
+    padding: 16px;
+  }
+  
+  .teacher-exams-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .teacher-exams-search-wrapper {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher-exams-table-responsive {
+    overflow-x: auto;
+  }
+  
+  .teacher-exams-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .teacher-exams-create-btn {
+    width: 100%;
+    justify-content: center;
+  }
+} 

@@ -12,6 +12,7 @@ import CategoriesManagement from './components/admin/CategoriesManagement';
 import Profile from './components/student/Profile';
 import { AuthProvider } from './context/AuthContext';
 import './css/App.css';
+import ExamsManagement from './components/teacher/ExamsManagement';
 
 function App() {
   return (
@@ -52,6 +53,11 @@ function App() {
             <Route path="/teacher/dashboard" element={
               <DashboardLayout role="teacher" title="Teacher Dashboard">
                 <TeacherDashboard />
+              </DashboardLayout>
+            } />
+            <Route path="/teacher/exams" element={
+              <DashboardLayout role="teacher" title="Exams Management">
+                <ExamsManagement />
               </DashboardLayout>
             } />
           </Routes>
